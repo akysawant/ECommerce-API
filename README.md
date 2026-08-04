@@ -142,13 +142,13 @@ ECommerceAPI
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/<your-repository-name>.git
+git clone https://github.com/akysawant/ECommerce-API.git
 ```
 
 ## 2. Navigate to Project
 
 ```bash
-cd <your-repository-name>
+cd ECommerce-API
 ```
 
 ## 3. Configure Database
