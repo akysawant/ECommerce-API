@@ -145,6 +145,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+//test auto deployment
 var app = builder.Build();
 
 app.UseSwagger();
