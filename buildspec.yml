@@ -1,24 +1,29 @@
 version: 0.2
 
-phase:
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0
+
   pre_build:
     commands:
-      - echo "starting restore.."
-      - donet restore ECommerce.sln
-  
+      - echo Restoring dependencies...
+      - dotnet restore ECommerce.API/ECommerce.API.csproj
+
   build:
     commands:
-      - echo "starting build..."
+      - echo Building application...
       - dotnet build ECommerce.API/ECommerce.API.csproj --configuration Release --no-restore
+      - echo Running tests...
+      - dotnet test ECommerce.API/ECommerce.API.csproj --configuration Release --no-build
+      - echo Publishing application...
+      - dotnet publish ECommerce.API/ECommerce.API.csproj --configuration Release --output ./publish --no-build
 
   post_build:
     commands:
-      - echo "starting publish..."
-      - dotnet publish ECommerce.API/ECommerce.API.csproj --configuration Release --no-restore --output ./publish
+      - echo Build completed successfully
 
 artifacts:
   files:
     - '**/*'
   base-directory: publish
-
-  
