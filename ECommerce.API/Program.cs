@@ -145,9 +145,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-//test auto deployment again after buildspec correction.
-
-error 
 var app = builder.Build();
 
 app.UseSwagger();
